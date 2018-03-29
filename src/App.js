@@ -1,7 +1,15 @@
+
 import React, { Component } from 'react'
 import * as firebase from 'firebase'
+import idb from 'idb'
 
 class App extends Component {
+  constructor (props) {
+    super(props)
+    this.firebaseIndexedDbName = 'firebaseLocalStorageDb'
+    this.firebaseObjectStoreName = 'firebaseLocalStorage'
+  }
+
   initFirebase () {
     var config = {
       apiKey: 'AIzaSyBnqqd27Sew_77rkQAYZwGpQJqCI077VQE',
@@ -14,10 +22,17 @@ class App extends Component {
     console.log('Initialized Firebase')
   }
 
+  async deleteFirebaseIndexedDB () {
+    console.log('Deleting Firebase IndexedDB...')
+    await idb.delete(this.firebaseIndexedDbName)
+    console.log('Finished deleting Firebase IndexedDB')
+  }
+
   render () {
     const buttonStyle = {
       display: 'inline-block',
       padding: 10,
+      margin: 10,
       cursor: 'pointer',
       background: '#DDD'
     }
@@ -33,6 +48,12 @@ class App extends Component {
           style={buttonStyle}
         >
           Initialize Firebase
+        </div>
+        <div
+          onClick={this.deleteFirebaseIndexedDB.bind(this)}
+          style={buttonStyle}
+        >
+          Delete Firebase IndexedDB
         </div>
       </div>
     )
