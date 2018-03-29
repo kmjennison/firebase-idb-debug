@@ -28,6 +28,12 @@ class App extends Component {
     console.log('Finished deleting Firebase IndexedDB')
   }
 
+  async createFirebaseIndexedDBWithoutObjectStore () {
+    console.log('Creating Firebase IndexedDB...')
+    await idb.open(this.firebaseIndexedDbName)
+    console.log('Finished creating Firebase IndexedDB')
+  }
+
   render () {
     const buttonStyle = {
       display: 'inline-block',
@@ -54,6 +60,12 @@ class App extends Component {
           style={buttonStyle}
         >
           Delete Firebase IndexedDB
+        </div>
+        <div
+          onClick={this.createFirebaseIndexedDBWithoutObjectStore.bind(this)}
+          style={buttonStyle}
+        >
+          Create Firebase IndexedDB without object store
         </div>
       </div>
     )
