@@ -1,8 +1,25 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import * as firebase from 'firebase'
 
 class App extends Component {
+  componentWillMount () {
+    this.initFirebase()
+  }
+
+  initFirebase () {
+    var config = {
+      apiKey: 'AIzaSyBnqqd27Sew_77rkQAYZwGpQJqCI077VQE',
+      authDomain: 'testing-project-a7d78.firebaseapp.com',
+      databaseURL: 'https://testing-project-a7d78.firebaseio.com',
+      projectId: 'testing-project-a7d78',
+      storageBucket: ''
+    }
+    firebase.initializeApp(config)
+    console.log('Initialized Firebase')
+  }
+
   render () {
     return (
       <div className='App'>
