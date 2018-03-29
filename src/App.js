@@ -30,8 +30,15 @@ class App extends Component {
 
   async createFirebaseIndexedDBWithoutObjectStore () {
     console.log('Creating Firebase IndexedDB...')
+    window.performance.mark('idb-pre-open')
     await idb.open(this.firebaseIndexedDbName)
-    console.log('Finished creating Firebase IndexedDB')
+    window.performance.mark('idb-post-open')
+    window.performance.measure('idb-time-to-open', 'idb-pre-open', 'idb-post-open')
+    const perfMeasures = window.performance.getEntriesByName('idb-time-to-open')
+    if (perfMeasures.length) {
+      console.log('Time to open IDB:', perfMeasures.slice(-1)[0].duration)
+    }
+    console.log('Finished creating Firebase IndexedDB without object store')
   }
 
   render () {
