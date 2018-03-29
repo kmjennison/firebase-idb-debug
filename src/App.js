@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
-import './App.css'
 import * as firebase from 'firebase'
 
 class App extends Component {
-  componentWillMount () {
-    this.initFirebase()
-  }
-
   initFirebase () {
     var config = {
       apiKey: 'AIzaSyBnqqd27Sew_77rkQAYZwGpQJqCI077VQE',
@@ -21,15 +15,25 @@ class App extends Component {
   }
 
   render () {
+    const buttonStyle = {
+      display: 'inline-block',
+      padding: 10,
+      cursor: 'pointer',
+      background: '#DDD'
+    }
     return (
-      <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to React</h1>
-        </header>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div
+        style={{
+          padding: 20,
+          background: '#FFF'
+        }}
+      >
+        <div
+          onClick={this.initFirebase.bind(this)}
+          style={buttonStyle}
+        >
+          Initialize Firebase
+        </div>
       </div>
     )
   }
