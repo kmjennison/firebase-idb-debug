@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import * as firebase from 'firebase'
+import * as firebaseModified from 'firebase-modified'
 import idb from 'idb'
 
 class App extends Component {
@@ -16,16 +17,26 @@ class App extends Component {
     )
   }
 
-  initFirebase () {
-    var config = {
+  getFirebaseConfig () {
+    return {
       apiKey: 'AIzaSyBnqqd27Sew_77rkQAYZwGpQJqCI077VQE',
       authDomain: 'testing-project-a7d78.firebaseapp.com',
       databaseURL: 'https://testing-project-a7d78.firebaseio.com',
       projectId: 'testing-project-a7d78',
       storageBucket: ''
     }
+  }
+
+  initFirebase () {
+    var config = this.getFirebaseConfig()
     firebase.initializeApp(config)
     console.log('Initialized Firebase')
+  }
+
+  initFirebaseModified () {
+    var config = this.getFirebaseConfig()
+    firebaseModified.initializeApp(config)
+    console.log('Initialized modified Firebase')
   }
 
   async deleteFirebaseIndexedDB () {
@@ -116,6 +127,12 @@ class App extends Component {
           style={buttonStyle}
         >
           Initialize Firebase
+        </div>
+        <div
+          onClick={this.initFirebaseModified.bind(this)}
+          style={buttonStyle}
+        >
+          Initialize modified Firebase
         </div>
         <div
           onClick={this.deleteFirebaseIndexedDB.bind(this)}

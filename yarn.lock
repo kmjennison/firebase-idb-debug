@@ -3029,7 +3029,7 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase@4.12.0:
+"firebase-modified@npm:firebase@4.12.0", firebase@4.12.0:
   version "4.12.0"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.12.0.tgz#fdc7eaee1769b1ec72ae56fea56c120a13f54d76"
   dependencies:
