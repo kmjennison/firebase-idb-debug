@@ -166,6 +166,7 @@ class App extends Component {
         </div>
         <div>
           <p>Open dev console to view some relevant logs.</p>
+          <p>Code for this page is <a href='https://github.com/kmjennison/firebase-idb-debug/blob/master/src/App.js'>here</a>.</p>
           <p>Modified Firebase code is <a href='https://github.com/kmjennison/firebase-js-sdk/pull/1'>here</a>. It:</p>
           <ul>
             <li>Handles recreating the database when the object store is missing</li>
