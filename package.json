@@ -4,8 +4,8 @@
   "private": true,
   "homepage": "https://kmjennison.github.io/firebase-idb-debug",
   "dependencies": {
-    "firebase": "4.12.0",
-    "firebase-modified": "npm:firebase@4.12.0",
+    "firebase": "4.12.1",
+    "firebase-modified": "npm:firebase@4.12.1",
     "idb": "^2.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
