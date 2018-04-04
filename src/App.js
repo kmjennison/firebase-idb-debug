@@ -122,41 +122,47 @@ class App extends Component {
           background: '#FFF'
         }}
       >
-        <div
-          onClick={this.initFirebase.bind(this)}
-          style={buttonStyle}
-        >
-          Initialize Firebase
+        <div>
+          <div
+            onClick={this.initFirebase.bind(this)}
+            style={buttonStyle}
+          >
+            Initialize Firebase
+          </div>
+          <div
+            onClick={this.initFirebaseModified.bind(this)}
+            style={buttonStyle}
+          >
+            Initialize modified Firebase
+          </div>
         </div>
-        <div
-          onClick={this.initFirebaseModified.bind(this)}
-          style={buttonStyle}
-        >
-          Initialize modified Firebase
-        </div>
-        <div
-          onClick={this.deleteFirebaseIndexedDB.bind(this)}
-          style={buttonStyle}
-        >
-          Delete Firebase IndexedDB
-        </div>
-        <div
-          onClick={this.createFirebaseIndexedDBWithoutObjectStore.bind(this)}
-          style={buttonStyle}
-        >
-          Create DB without object store
-        </div>
-        <div
-          onClick={this.createFirebaseIndexedDBWithObjectStore.bind(this)}
-          style={buttonStyle}
-        >
-          Create DB with object store
-        </div>
-        <div
-          onClick={this.testOpenDBTransaction.bind(this)}
-          style={buttonStyle}
-        >
-          Test opening a transaction
+        <div>
+          <div
+            onClick={this.deleteFirebaseIndexedDB.bind(this)}
+            style={buttonStyle}
+          >
+            Delete Firebase IndexedDB
+          </div>
+          <div
+            onClick={this.createFirebaseIndexedDBWithoutObjectStore.bind(this)}
+            style={buttonStyle}
+          >
+            Create DB without object store
+          </div>
+          <div
+            onClick={this.createFirebaseIndexedDBWithObjectStore.bind(this)}
+            style={buttonStyle}
+          >
+            Create DB with object store
+          </div>
+          <div
+            onClick={this.testOpenDBTransaction.bind(this)}
+            style={Object.assign({}, buttonStyle, {
+              display: 'none'
+            })}
+          >
+            Test opening a transaction
+          </div>
         </div>
       </div>
     )
