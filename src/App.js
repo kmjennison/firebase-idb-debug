@@ -164,6 +164,14 @@ class App extends Component {
             Test opening a transaction
           </div>
         </div>
+        <div>
+          <p>Open dev console to view some relevant logs.</p>
+          <p>Modified Firebase code is <a href='https://github.com/kmjennison/firebase-js-sdk/pull/1'>here</a>. It:</p>
+          <ul>
+            <li>Handles recreating the database when the object store is missing</li>
+            <li>Adds console logs to the IDB.open onerror event</li>
+          </ul>
+        </div>
       </div>
     )
   }
